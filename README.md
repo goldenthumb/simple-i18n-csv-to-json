@@ -1,4 +1,4 @@
-# simple-i18n
+# @goldenthumb/simple-i18n-csv-to-json
 [![npm](https://img.shields.io/npm/v/@goldenthumb/simple-i18n-csv-to-json.svg)](https://www.npmjs.com/package/@goldenthumb/simple-i18n-csv-to-json)
 
 ## Install

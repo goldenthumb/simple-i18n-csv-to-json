@@ -1,6 +1,6 @@
 {
   "name": "@goldenthumb/simple-i18n-csv-to-json",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "A utility that makes @goldenthumb/simple-i18n easy to use",
   "main": "./src/index.js",
   "files": [
@@ -23,7 +23,7 @@
     "simple-i18n",
     "csv-to-json"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/goldenthumb/simple-i18n-csv-to-json/issues"
   },
