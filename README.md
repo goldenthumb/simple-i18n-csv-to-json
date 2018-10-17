@@ -62,6 +62,7 @@ const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
 
 ```
 ### Using by with @goldenthumb/simple
+[@goldenthumb/simple](https://github.com/goldenthumb/simple-i18n)
 ```sh
 npm install @goldenthumb/simple-i18n @goldenthumb/simple-i18n-csv-to-json
 ```
