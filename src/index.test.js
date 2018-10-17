@@ -1,5 +1,5 @@
 import toJson from '../src';
-
+import SimpleI18n from '@goldenthumb/simple-i18n';
 
 // sample csv
 // ,ko,en,ja,zh_CN,zh_TW
@@ -31,5 +31,18 @@ test('basic', async () => {
     }
   };
   expect(result).toEqual(messages);
+});
+
+test('using by with SimpleI18n', async () => {
+  const messages = await toJson('./sample.csv');
+  const i18n = new SimpleI18n({
+    defaultLocale: ['en'],
+    locale: 'en',
+    messages
+  });
+
+  expect(i18n.message('yes')).toBe('Yes');
+  i18n.switchLang('ja');
+  expect(i18n.message('no')).toBe('いいえ');
 });
 
