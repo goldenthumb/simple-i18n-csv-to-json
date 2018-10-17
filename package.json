@@ -1,0 +1,42 @@
+{
+  "name": "@goldenthumb/simple-i18n-csv-to-json",
+  "version": "0.0.1",
+  "description": "A utility that makes @goldenthumb/simple-i18n easy to use",
+  "main": "./src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "jest test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goldenthumb/simple-i18n-csv-to-json.git"
+  },
+  "author": "",
+  "keywords": [
+    "i18n",
+    "simple-i18n",
+    "csv-to-json"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goldenthumb/simple-i18n-csv-to-json/issues"
+  },
+  "homepage": "https://github.com/goldenthumb/simple-i18n-csv-to-json#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "fs-extra": "^7.0.0",
+    "jest": "^23.5.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": "~8.11.3"
+  }
+}
