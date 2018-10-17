@@ -15,8 +15,14 @@ const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
 ,ko,en,ja,zh_CN,zh_TW <br>
 yes,예,Yes,はい,是的,是的 <br>
 no,아니오,No,いいえ,没有,沒有 <br>
-<br>
-### basic
+### CLI
+
+```
+Usage: i18n-csv2json <input file> [<output file>]
+$ i18n-csv2json ./src/sample.csv ./output.json
+```
+
+### Basic
 ```js
 const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
 
