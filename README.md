@@ -9,13 +9,12 @@ npm install @goldenthumb/simple-i18n-csv-to-json
 const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
 ```
 
-## Example
+## Usage
+### sample csv
 ![example excel](./sample.png)
-
-sample csv
-,ko,en,ja,zh_CN,zh_TW
-yes,예,Yes,はい,是的,是的
-no,아니오,No,いいえ,没有,沒有
+,ko,en,ja,zh_CN,zh_TW <br>
+yes,예,Yes,はい,是的,是的 <br>
+no,아니오,No,いいえ,没有,沒有 <br>
 
 ```js
 import toJson from '@goldenthumb/simple-i18n-csv-to-json';
