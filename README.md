@@ -15,44 +15,77 @@ const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
 ,ko,en,ja,zh_CN,zh_TW <br>
 yes,예,Yes,はい,是的,是的 <br>
 no,아니오,No,いいえ,没有,沒有 <br>
-
+<br>
+### basic
 ```js
-import toJson from '@goldenthumb/simple-i18n-csv-to-json';
+const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
 
 (async () => {
   try {
     const result = await toJson('./sample.csv');
     console.log(result);
+    
+    > result
+      {
+        ko: {
+          yes: '예',
+          no: '아니오'
+        },
+        en: {
+          yes: 'Yes',
+          no: 'No'
+        },
+        ja: {
+          yes: 'はい',
+          no: 'いいえ'
+        },
+        zh_CN: {
+          yes: '是的',
+          no: '没有'
+        },
+        zh_TW: {
+          yes: '是的',
+          no: '沒有'
+        }
+      };
   } catch(e) {
     console.log(e);
   }
-
-  > result
-  {
-    ko: {
-      yes: '예',
-      no: '아니오'
-    },
-    en: {
-      yes: 'Yes',
-      no: 'No'
-    },
-    ja: {
-      yes: 'はい',
-      no: 'いいえ'
-    },
-    zh_CN: {
-      yes: '是的',
-      no: '没有'
-    },
-    zh_TW: {
-      yes: '是的',
-      no: '沒有'
-    }
-  };
 })();
 
 ```
+### Using by with @goldenthumb/simple
+```sh
+npm install @goldenthumb/simple-i18n @goldenthumb/simple-i18n-csv-to-json
+```
+
+```js
+const SimpleI18n = require('@goldenthumb/simple-i18n');
+const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
+
+(async () => {
+  try {
+    const messages = await toJson('./sample.csv');
+    const i18n = new SimpleI18n({
+      defaultLocale: ['en'],
+      locale: 'en',
+      messages
+    });
+    
+    i18n.message('yes')
+    > Yes.
+
+    i18n.switchLang('ja');
+    i18n.message('no');
+    > いいえ
+  } catch(e) {
+    console.log(e);
+  }
+})();
+
+```
+
+
 
 ## License
 MIT
