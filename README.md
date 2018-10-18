@@ -11,7 +11,7 @@ const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
 
 ## Usage
 ### sample csv
-![example excel](https://raw.githubusercontent.com/goldenthumb/simple-i18n-csv-to-json/master/sample.png)
+![example excel](https://raw.githubusercontent.com/goldenthumb/simple-i18n-csv-to-json/master/sample.png) <br>
 ,ko,en,ja,zh_CN,zh_TW <br>
 yes,예,Yes,はい,是的,是的 <br>
 no,아니오,No,いいえ,没有,沒有 <br>
