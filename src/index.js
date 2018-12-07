@@ -41,7 +41,7 @@ const csvToArray = (data) => {
     const value = str[0] !== '"' ? str : str.slice(1, -1).replace(/""/g, '"');
 
     if (separator === ',' || value) {
-      row.push(value);
+      row.push(value.replace(/[^\r]\n/g, '\r\n'));
     }
 
     if (separator !== ',') {
