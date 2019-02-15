@@ -11,19 +11,27 @@ const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
 
 ## Usage
 ### sample csv
-![example excel](https://raw.githubusercontent.com/goldenthumb/simple-i18n-csv-to-json/master/sample.png) <br>
+|     | ko | en | ja   | zh_CN | zh_TW |
+|-----|----|----|------|-------|-------|
+| yes | 예 | Yes | はい  | 是的   | 是的   |
+| No  |    | No | いいえ | 没有   | 沒有   |
+<br />
 ,ko,en,ja,zh_CN,zh_TW <br>
 yes,예,Yes,はい,是的,是的 <br>
-no,아니오,No,いいえ,没有,沒有 <br>
+no,,No,いいえ,没有,沒有 <br>
 
 ### CLI
 
 ```
-Usage: i18n-csv2json <input file> [<output file>]
-$ i18n-csv2json ./src/sample.csv ./output.json
+Usage: i18n-csv2json <input file> [<output file>] [--allowEmpty]
+$ i18n-csv2json ./sample.csv ./output.json
 ```
 
 ### Basic
+```
+$ i18n-csv2json ./sample.csv ./output.json
+```
+
 ```js
 const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
 
@@ -35,8 +43,48 @@ const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
     > result
       {
         ko: {
+          yes: '예'
+        },
+        en: {
+          yes: 'Yes',
+          no: 'No'
+        },
+        ja: {
+          yes: 'はい',
+          no: 'いいえ'
+        },
+        zh_CN: {
+          yes: '是的',
+          no: '没有'
+        },
+        zh_TW: {
+          yes: '是的',
+          no: '沒有'
+        }
+      };
+  } catch(e) {
+    console.log(e);
+  }
+})();
+```
+### Allow Empty String
+```
+$ i18n-csv2json ./sample.csv ./output.json --allowEmpty
+```
+
+```js
+const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
+
+(async () => {
+  try {
+    const result = await toJson('./sample.csv', { allowEmpty: true });
+    console.log(result);
+    
+    > result
+      {
+        ko: {
           yes: '예',
-          no: '아니오'
+          no: ''
         },
         en: {
           yes: 'Yes',
@@ -61,6 +109,7 @@ const toJson = require('@goldenthumb/simple-i18n-csv-to-json');
 })();
 
 ```
+
 ### Using by with @goldenthumb/simple
 [@goldenthumb/simple](https://github.com/goldenthumb/simple-i18n)
 ```sh

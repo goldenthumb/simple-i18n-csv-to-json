@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 
-module.exports = async (filePath) => {
-  const csv = await fs.readFileSync(filePath, { encoding: 'utf8' });
+module.exports = async (filePath, { allowEmpty } = {}) => {
+  const csv = await fs.readFile(filePath, { encoding: 'utf8' });
 
   if (!csv) {
     throw new Error('File Does Not Exist.');
@@ -15,6 +15,8 @@ module.exports = async (filePath) => {
     const key = row.shift();
 
     row.forEach((value, i) => {
+      if (!allowEmpty && !value) return;
+
       const locale = locales[i];
       (output[locale] || (output[locale] = {}))[key] = value;
     });
