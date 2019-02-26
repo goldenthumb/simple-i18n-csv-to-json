@@ -1,6 +1,6 @@
 {
   "name": "@goldenthumb/simple-i18n-csv-to-json",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A utility that makes @goldenthumb/simple-i18n easy to use",
   "main": "./src/index.js",
   "files": [
@@ -45,8 +45,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "engines": {
-    "node": "~8.11.3"
   }
 }
