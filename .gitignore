@@ -1,2 +1,6 @@
 node_modules/
 .idea/
+.history/
+.vscode/
+*.lock
+yarn-error.log

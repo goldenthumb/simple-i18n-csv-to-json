@@ -1,54 +1,54 @@
 const fs = require('fs-extra');
 
 module.exports = async (filePath, { allowEmpty } = {}) => {
-  const csv = await fs.readFile(filePath, { encoding: 'utf8' });
+    const csv = await fs.readFile(filePath, { encoding: 'utf8' });
 
-  if (!csv) {
-    throw new Error('File Does Not Exist.');
-  }
+    if (!csv) {
+        throw new Error('File Does Not Exist.');
+    }
 
-  const data = csvToArray(csv);
-  const locales = data.shift().slice(1);
-  const output = {};
+    const data = csvToArray(csv);
+    const locales = data.shift().slice(1);
+    const output = {};
 
-  data.forEach(row => {
-    const key = row.shift();
+    data.forEach(row => {
+        const key = row.shift();
 
-    row.forEach((value, i) => {
-      if (!allowEmpty && !value) return;
+        row.forEach((value, i) => {
+            if (!allowEmpty && !value) return;
 
-      const locale = locales[i];
-      (output[locale] || (output[locale] = {}))[key] = value;
+            const locale = locales[i];
+            (output[locale] || (output[locale] = {}))[key] = value;
+        });
     });
-  });
 
-  return output;
+    return output;
 };
 
 const csvToArray = (data) => {
-  if (data.slice(-1) !== '\n') data += '\n';
+    if (data.slice(-1) !== '\n') data += '\n';
 
-  const regex = /("(?:[^"]|"")*"|[^,"\n\r]*)(,|\r?\n|\r)/y;
-  const rows = [];
-  let row = [];
+    const regex = /("(?:[^"]|"")*"|[^,"\n\r]*)(,|\r?\n|\r)/y;
+    const rows = [];
+    let row = [];
 
-  while (true) {
-    const match = data.match(regex);
+    while (true) {
+        const match = data.match(regex);
 
-    if (!match) {
-      return rows;
+        if (!match) {
+            return rows;
+        }
+
+        const [, str, separator] = match;
+        const value = str[0] !== '"' ? str : str.slice(1, -1).replace(/""/g, '"');
+
+        if (separator === ',' || value) {
+            row.push(value.replace(/([^\r])\n/g, '$1\r\n'));
+        }
+
+        if (separator !== ',') {
+            rows.push(row);
+            row = [];
+        }
     }
-
-    const [, str, separator] = match;
-    const value = str[0] !== '"' ? str : str.slice(1, -1).replace(/""/g, '"');
-
-    if (separator === ',' || value) {
-      row.push(value.replace(/([^\r])\n/g, '$1\r\n'));
-    }
-
-    if (separator !== ',') {
-      rows.push(row);
-      row = [];
-    }
-  }
 };

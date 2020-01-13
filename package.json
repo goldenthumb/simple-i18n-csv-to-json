@@ -1,49 +1,47 @@
 {
-  "name": "@goldenthumb/simple-i18n-csv-to-json",
-  "version": "0.2.1",
-  "description": "A utility that makes @goldenthumb/simple-i18n easy to use",
-  "main": "./src/index.js",
-  "files": [
-    "src",
-    "bin"
-  ],
-  "bin": {
-    "i18n-csv2json": "./bin/cli.js"
-  },
-  "scripts": {
-    "test": "jest test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/goldenthumb/simple-i18n-csv-to-json.git"
-  },
-  "author": "",
-  "keywords": [
-    "i18n",
-    "simple-i18n",
-    "csv-to-json"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/goldenthumb/simple-i18n-csv-to-json/issues"
-  },
-  "homepage": "https://github.com/goldenthumb/simple-i18n-csv-to-json#readme",
-  "devDependencies": {
-    "@goldenthumb/simple-i18n": "0.0.6",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-jest": "^23.4.2",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "commander": "^2.19.0",
-    "fs-extra": "^7.0.0",
-    "jest": "^23.5.0",
-    "regenerator-runtime": "^0.12.1"
-  },
-  "dependencies": {
-    "fs-extra": "^7.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+    "name": "@goldenthumb/simple-i18n-csv-to-json",
+    "version": "0.2.2",
+    "description": "A utility that makes @goldenthumb/simple-i18n easy to use",
+    "main": "./src/index.js",
+    "files": [
+        "src",
+        "bin"
+    ],
+    "bin": {
+        "i18n-csv2json": "./bin/cli.js"
+    },
+    "scripts": {
+        "test": "jest test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/goldenthumb/simple-i18n-csv-to-json.git"
+    },
+    "author": "",
+    "keywords": [
+        "i18n",
+        "simple-i18n",
+        "csv-to-json"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/goldenthumb/simple-i18n-csv-to-json/issues"
+    },
+    "homepage": "https://github.com/goldenthumb/simple-i18n-csv-to-json#readme",
+    "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/plugin-transform-runtime": "^7.8.0",
+        "@babel/preset-env": "^7.8.2",
+        "@goldenthumb/simple-i18n": "0.0.6",
+        "babel-jest": "^24.9.0",
+        "commander": "^4.1.0",
+        "fs-extra": "^8.1.0",
+        "jest": "^24.9.0"
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.8.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
 }
